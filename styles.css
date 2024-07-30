@@ -15,3 +15,11 @@ p {
   margin: 50px auto;
   font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
 }
+[dependencies]
+static-vcruntime = "0.2" 
+
+[target.aarch64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=/NODEFAULTLIB:libcmt"]
+
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=/NODEFAULTLIB:libcmt"]
